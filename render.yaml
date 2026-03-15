@@ -1,0 +1,34 @@
+services:
+  # FastAPI Backend
+  - type: web
+    name: doctorbot-api
+    runtime: python
+    region: oregon
+    plan: free
+    rootDir: doctorbot/backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: MISTRAL_API_KEY
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
+      - key: PYTHON_VERSION
+        value: 3.13.0
+
+  # Next.js Frontend (Static Site)
+  - type: web
+    name: doctorbot-ui
+    runtime: static
+    region: oregon
+    plan: free
+    rootDir: doctorbot/frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: out
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=0, must-revalidate
+    envVars:
+      - key: NEXT_PUBLIC_API_URL
+        sync: false
