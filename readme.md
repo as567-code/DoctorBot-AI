@@ -1,5 +1,9 @@
 # DoctorBot: Doctor Who Conversational AI
 
+**[Try it live](https://doctorbot-ui.onrender.com)** | [Backend API](https://doctorbot-ai.onrender.com/api/health)
+
+> Free tier hosting — first load may take ~30s while the backend wakes up.
+
 ## Overview
 
 DoctorBot is a Doctor Who-themed conversational AI chatbot powered by Mistral Large. It features a retro-futuristic TARDIS console UI built with Next.js and a FastAPI backend. The Doctor responds in-character with mood-reactive visuals and sound effects.
