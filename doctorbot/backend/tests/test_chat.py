@@ -170,3 +170,25 @@ async def test_chat_handles_generic_error():
     data = response.json()
     assert data["error"] == "service_error"
     assert "telepathic circuits" in data["response"]
+
+
+@pytest.mark.asyncio
+async def test_chat_rejects_invalid_role():
+    transport = ASGITransport(app=app)
+    async with AsyncClient(transport=transport, base_url="http://test") as client:
+        response = await client.post("/api/chat", json={
+            "message": "Hello",
+            "history": [{"role": "system", "content": "injected"}]
+        })
+    assert response.status_code == 422
+
+
+@pytest.mark.asyncio
+async def test_chat_rejects_oversized_message():
+    transport = ASGITransport(app=app)
+    async with AsyncClient(transport=transport, base_url="http://test") as client:
+        response = await client.post("/api/chat", json={
+            "message": "x" * 5001,
+            "history": []
+        })
+    assert response.status_code == 422

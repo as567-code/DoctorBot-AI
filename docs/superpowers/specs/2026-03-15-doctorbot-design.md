@@ -1,6 +1,6 @@
 # DoctorBot — Design Specification
 
-A TARDIS-themed AI chatbot with the personality of The Doctor (Doctor Who), blending the best traits of all incarnations. Replaces the existing RickBot project with a modern full-stack rebuild.
+A TARDIS-themed AI chatbot with the personality of The Doctor (Doctor Who), blending the best traits of all incarnations. A modern full-stack application.
 
 ## Architecture
 
@@ -217,14 +217,9 @@ The chat layout is fully responsive:
 - **Desktop (>768px):** Hero + floating chat window (max-width 800px, centered) + console bar
 - **Mobile (<768px):** Hero collapses to compact header, chat window fills width, console bar icons shrink. Three.js vortex uses reduced particle count for performance. Users with `prefers-reduced-motion` get a static gradient instead of the vortex animation.
 
-## What Gets Removed
+## Architecture Decisions
 
-The entire existing RickBot codebase is replaced:
-
-- Flask app → FastAPI backend
-- DialoGPT model + training pipeline → Mistral API with system prompt
-- Bootstrap + vanilla JS templates → Next.js + React + Three.js
-- Rick personality → Doctor personality
-- All training data, model checkpoints, data processing scripts → not needed
-
-The new `doctorbot/` directory is created at the project root alongside the old files. Old files (`app.py`, `src/`, `static/`, `templates/`, `data/`, `models/`, `requirements.txt`, etc.) are left in place — the user can archive or delete them separately. The implementation plan does not include deletion of old files.
+- FastAPI backend with Mistral API and system prompt engineering
+- Next.js + React + Three.js frontend
+- Doctor Who personality with mood-reactive UI
+- Synthesized sound effects to avoid copyright issues
