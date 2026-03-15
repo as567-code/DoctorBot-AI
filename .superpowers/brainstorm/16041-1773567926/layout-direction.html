@@ -1,0 +1,119 @@
+<h2>DoctorBot — Chat Layout</h2>
+<p class="subtitle">How should the chat interface be structured? (Time Vortex theme applied to all)</p>
+
+<div class="cards">
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 100%); height: 260px; padding: 12px; display: flex; flex-direction: column; position: relative; overflow: hidden;">
+      <!-- Vortex bg -->
+      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 50% 0%, rgba(138,43,226,0.1) 0%, transparent 60%);"></div>
+      <!-- Header -->
+      <div style="height: 30px; background: rgba(138,43,226,0.2); border-radius: 6px 6px 0 0; display: flex; align-items: center; padding: 0 10px; z-index: 1;">
+        <div style="width: 8px; height: 8px; border-radius: 50%; background: rgba(255,140,0,0.8); margin-right: 6px;"></div>
+        <div style="font-size: 10px; color: rgba(255,255,255,0.6);">DoctorBot</div>
+      </div>
+      <!-- Chat area - full width -->
+      <div style="flex: 1; background: rgba(10,10,26,0.8); border: 1px solid rgba(138,43,226,0.2); padding: 8px; display: flex; flex-direction: column; gap: 6px; z-index: 1;">
+        <div style="align-self: flex-start; background: rgba(138,43,226,0.2); border-radius: 8px; padding: 4px 8px; max-width: 70%;">
+          <div style="font-size: 8px; color: rgba(255,255,255,0.7);">Allons-y! What shall we explore?</div>
+        </div>
+        <div style="align-self: flex-end; background: rgba(255,140,0,0.2); border-radius: 8px; padding: 4px 8px; max-width: 70%;">
+          <div style="font-size: 8px; color: rgba(255,255,255,0.7);">Tell me about black holes</div>
+        </div>
+        <div style="align-self: flex-start; background: rgba(138,43,226,0.2); border-radius: 8px; padding: 4px 8px; max-width: 70%;">
+          <div style="font-size: 8px; color: rgba(255,255,255,0.7);">Oh brilliant! Now that's a proper question...</div>
+        </div>
+      </div>
+      <!-- Input -->
+      <div style="height: 28px; background: rgba(10,10,26,0.9); border: 1px solid rgba(138,43,226,0.3); border-top: none; border-radius: 0 0 6px 6px; display: flex; align-items: center; padding: 0 8px; gap: 6px; z-index: 1;">
+        <div style="flex: 1; height: 16px; background: rgba(138,43,226,0.1); border-radius: 8px; border: 1px solid rgba(138,43,226,0.2);"></div>
+        <div style="width: 20px; height: 16px; background: rgba(255,140,0,0.4); border-radius: 4px;"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A) Fullscreen Chat</h3>
+      <p>Chat takes the entire viewport. Time vortex animates subtly in the background behind messages. Clean, focused, immersive. Header with bot name and status. Mobile-friendly.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 100%); height: 260px; padding: 12px; display: flex; position: relative; overflow: hidden;">
+      <!-- Vortex bg -->
+      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 30% 50%, rgba(138,43,226,0.1) 0%, transparent 50%);"></div>
+      <!-- Left sidebar - console -->
+      <div style="width: 60px; background: rgba(138,43,226,0.1); border: 1px solid rgba(138,43,226,0.2); border-radius: 6px 0 0 6px; display: flex; flex-direction: column; align-items: center; padding: 8px 4px; gap: 8px; z-index: 1;">
+        <div style="width: 24px; height: 24px; border-radius: 50%; background: rgba(255,140,0,0.3); border: 1px solid rgba(255,140,0,0.5);"></div>
+        <div style="width: 24px; height: 24px; border-radius: 50%; background: rgba(138,43,226,0.3); border: 1px solid rgba(138,43,226,0.5);"></div>
+        <div style="width: 24px; height: 24px; border-radius: 50%; background: rgba(138,43,226,0.2); border: 1px solid rgba(138,43,226,0.3);"></div>
+        <div style="flex: 1;"></div>
+        <div style="width: 20px; height: 20px; border-radius: 50%; background: rgba(0,200,100,0.3); border: 1px solid rgba(0,200,100,0.5);"></div>
+      </div>
+      <!-- Chat area -->
+      <div style="flex: 1; display: flex; flex-direction: column; z-index: 1;">
+        <div style="height: 24px; background: rgba(138,43,226,0.15); display: flex; align-items: center; padding: 0 8px;">
+          <div style="font-size: 9px; color: rgba(255,255,255,0.5);">DoctorBot — Time Vortex Active</div>
+        </div>
+        <div style="flex: 1; background: rgba(10,10,26,0.7); padding: 6px; display: flex; flex-direction: column; gap: 4px;">
+          <div style="align-self: flex-start; background: rgba(138,43,226,0.2); border-radius: 6px; padding: 3px 6px;">
+            <div style="font-size: 7px; color: rgba(255,255,255,0.7);">Allons-y!</div>
+          </div>
+          <div style="align-self: flex-end; background: rgba(255,140,0,0.2); border-radius: 6px; padding: 3px 6px;">
+            <div style="font-size: 7px; color: rgba(255,255,255,0.7);">Hello Doctor</div>
+          </div>
+        </div>
+        <div style="height: 22px; background: rgba(10,10,26,0.9); border-top: 1px solid rgba(138,43,226,0.2); display: flex; align-items: center; padding: 0 6px; gap: 4px;">
+          <div style="flex: 1; height: 14px; background: rgba(138,43,226,0.1); border-radius: 7px;"></div>
+          <div style="width: 16px; height: 14px; background: rgba(255,140,0,0.4); border-radius: 3px;"></div>
+        </div>
+      </div>
+      <!-- Right panel -->
+      <div style="width: 55px; background: rgba(138,43,226,0.05); border: 1px solid rgba(138,43,226,0.15); border-radius: 0 6px 6px 0; display: flex; flex-direction: column; padding: 6px 4px; gap: 4px; z-index: 1;">
+        <div style="font-size: 6px; color: rgba(255,200,50,0.5); text-align: center;">CONSOLE</div>
+        <div style="height: 30px; border: 1px solid rgba(255,140,0,0.2); border-radius: 4px; background: rgba(255,140,0,0.05);"></div>
+        <div style="height: 30px; border: 1px solid rgba(138,43,226,0.2); border-radius: 4px; background: rgba(138,43,226,0.05);"></div>
+        <div style="height: 20px; border: 1px solid rgba(138,43,226,0.15); border-radius: 50%; background: rgba(138,43,226,0.05); align-self: center; width: 20px;"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B) Console Cockpit</h3>
+      <p>Chat in the center, flanked by interactive TARDIS console panels. Left sidebar has navigation/mode buttons. Right panel has decorative console controls, dials, and indicators. Feels like you're inside the TARDIS.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 100%); height: 260px; padding: 12px; display: flex; flex-direction: column; position: relative; overflow: hidden;">
+      <!-- Vortex bg -->
+      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 50% 30%, rgba(138,43,226,0.15) 0%, transparent 50%);"></div>
+      <!-- Landing/hero area -->
+      <div style="flex: 0 0 100px; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 1;">
+        <div style="width: 40px; height: 40px; border-radius: 50%; background: radial-gradient(circle, rgba(255,140,0,0.6) 0%, rgba(138,43,226,0.3) 100%); border: 2px solid rgba(138,43,226,0.5); margin-bottom: 6px;"></div>
+        <div style="font-size: 11px; color: rgba(255,255,255,0.8); font-weight: bold;">DoctorBot</div>
+        <div style="font-size: 7px; color: rgba(255,200,50,0.6); margin-top: 2px;">The Doctor Will See You Now</div>
+      </div>
+      <!-- Compact chat -->
+      <div style="flex: 1; background: rgba(10,10,26,0.6); border: 1px solid rgba(138,43,226,0.2); border-radius: 8px; margin: 0 20px; display: flex; flex-direction: column; z-index: 1;">
+        <div style="flex: 1; padding: 6px; display: flex; flex-direction: column; gap: 4px; justify-content: flex-end;">
+          <div style="align-self: flex-start; background: rgba(138,43,226,0.2); border-radius: 6px; padding: 3px 6px;">
+            <div style="font-size: 7px; color: rgba(255,255,255,0.7);">Hello! I'm the Doctor.</div>
+          </div>
+          <div style="align-self: flex-end; background: rgba(255,140,0,0.2); border-radius: 6px; padding: 3px 6px;">
+            <div style="font-size: 7px; color: rgba(255,255,255,0.7);">Doctor who?</div>
+          </div>
+        </div>
+        <div style="height: 22px; border-top: 1px solid rgba(138,43,226,0.2); display: flex; align-items: center; padding: 0 6px; gap: 4px;">
+          <div style="flex: 1; height: 14px; background: rgba(138,43,226,0.1); border-radius: 7px;"></div>
+          <div style="width: 16px; height: 14px; background: rgba(255,140,0,0.4); border-radius: 3px;"></div>
+        </div>
+      </div>
+      <!-- Bottom controls strip -->
+      <div style="height: 24px; display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 6px; z-index: 1;">
+        <div style="width: 12px; height: 12px; border-radius: 50%; background: rgba(138,43,226,0.3); border: 1px solid rgba(138,43,226,0.5);"></div>
+        <div style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255,140,0,0.3); border: 1px solid rgba(255,140,0,0.5);"></div>
+        <div style="width: 12px; height: 12px; border-radius: 50%; background: rgba(0,200,100,0.3); border: 1px solid rgba(0,200,100,0.5);"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C) Hero + Chat Hybrid</h3>
+      <p>Landing hero area on top with Doctor avatar and title. Chat window below, slightly narrower with rounded edges floating over the vortex background. Console controls as a subtle bottom bar. Balances spectacle with usability.</p>
+    </div>
+  </div>
+</div>
